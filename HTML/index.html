@@ -4,10 +4,12 @@
         <meta charset="UTF-8">
         <title>Home page</title>
     </head>
-    <body>
-        <h1>HTML</h1>
+    <body >
+        <h1 style="color:teal; text-align:center">HTML</h1>
+        : h1태그 내부에 style="color:teal; text-align:center"을 넣어 CSS스타일 설정 가능 바꾸었다.
+        : 색상은 color:teal 아니면 color:rgb(0,128,128), 그리고 color:#008080 으로 사용할 수 있다.
         <hr>
-        <p>
+        <p> 
             <b>HTML</b>은 HyperText Markup Language의 약자로써
             웹 페이지의 전체적인 골격을 담당한다.<br>
             다양한 태그들로 구성되고, 각 태그는 웹 페이지의 디자인이나 기능을 결정하는데 사용된다.<br>
@@ -20,6 +22,7 @@
                 <li><a href="#1">태그의 종류</a></li>
                 <li><a href="#2">엔티티</a></li>
                 <li><a href="#3">문자셋</a></li>
+                <li><a href="#4">링크</a></li>
             </ol>
         </p>
         <h2 id="1">태그의 종류</h2>
@@ -95,6 +98,45 @@
             <li>ISO-8859-1 : 256개의 문자 코드를 지원하는 HTML4의 기본 문자셋이다.</li>
             <li>UTF-8 : 세상에 있는 거의 모든 문자를 표현할 수 있는 유니코드 문자를 지원하는 HTML5의 기본 문자셋이다.</li>
         </ul>
+        <h2 id="4">링크</h2>
+        <hr>
+        HTML에서는 다른 페이지나 사이트로 이동할 수 있는 수많은 하이퍼링크(Hyperlink)가 존재한다.<br>
+        이러한 링크를 간단히 링크(Link)라고도 부르며, HTML에서는 &lt;a&gt;태그로 표현한다.<br>
+        a 태그는 텍스트나 단락, 이미지 등 다양한 HTML 요소에 사용할 수 있다.<br>
+        <h3>href 속성</h3>
+        a 태그의 href속성은 연결할 페이지나 사이트의 URL주소를 명시한다.<br>
+        ex)<br>
+        <a href="https://www.google.com"><h4>구글입니다.</h4></a>
+        여기서 href속성값으로는 https://www.google.com, a태그 내부내용으론 '구글입니다.'라는 문장을 사용했다.
+        <h3>target 속성</h3>
+        target 속성은 링크로 연결된 문서를 어디에서 열지 명시한다.
+        <ul>
+            <li>_blank : 링크로 연결된 문서를 새 창이나 새 탭에서 연다.</li>
+            <li>_self : 링크로 연결된 문서를 현재 프레임(Frame)에서 연다(기본설정(Default)).</li>
+            <li>_parent : 링크로 연결된 문서를 부모 프레임에서 연다.</li>
+            <li>_top : 링크로 연결된 문서를 현재 창의 가장 상위 프레임에서 연다.</li>
+            <li>프레임 이름 : 링크로 연결된 문서를 지정된 프레임에서 연다.</li>
+        </ul>
+        마지막 프레임 이름 ex)
+        <pre>
+코드 : 
+&lt;h2&gt;&lt;a href="index.html" target="myframe"&gt;Hello Again!!&lt;/a&gt;&lt;/h2&gt;
+&lt;iframe name="myframe" style="width:50%; height:330px"&gt;&lt;/iframe&gt;
+        </pre>
+        <h2><a href="index.html" target="myframe">Hello Again!!</a></h2>
+        <iframe name="myframe" style="width:50%; height:330px"></iframe>
+        <h3>링크의 상태(state)</h3>
+        <ul>
+            <li>link : 아직 한번도 방문한 적이 없는 상태(Default)</li>
+            <li>visited : 한 번이라도 방문한 적이 있는 상태</li>
+            <li>hover : 링크 위에 마우스를 올려놓은 상태</li>
+            <li>active : 링크를 마우스로 누르고 있는 상태</li>
+        </ul>
+        <p>
+            기본적으로 링크가 걸린 텍스트는 밑줄에, 텍스트 색상이 파란색으로 변경된다.<br>
+            visited 상태의 링크는 밑줄에, 텍스트 색상이 보라색으로 변경된다.<br>
+            active 상태의 링크는 밑줄에, 텍스트 색상이 빨간색으로 변경된다.<br>
+        </p>
         </p>
     </body>
 </html>
