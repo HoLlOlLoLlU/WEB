@@ -3,6 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Home page</title>
+        <style>
+            a:link    { color: teal; }
+            a:visited { color: maroon; text-decoration: none }
+            a:hover   { color: yellow; text-decoration: none }
+            a:active  { color: red; text-decoration: none }
+            img {
+                width:100%;
+                border: 1px solid black;
+            }
+        </style>
     </head>
     <body >
         <h1 style="color:teal; text-align:center">HTML</h1>
@@ -23,7 +33,9 @@
                 <li><a href="#2">엔티티</a></li>
                 <li><a href="#3">문자셋</a></li>
                 <li><a href="#4">링크</a></li>
+                <li><a href="#5">이미지</a></li>
             </ol>
+            목차에서 원하는 곳으로 이동하기 위해서 href="#~~"를 사용하고 밑의 이동하기 원하는 태그에 id="~~"이라는 속성을 추가하여 이동하였다.
         </p>
         <h2 id="1">태그의 종류</h2>
         <hr>
@@ -137,6 +149,79 @@
             visited 상태의 링크는 밑줄에, 텍스트 색상이 보라색으로 변경된다.<br>
             active 상태의 링크는 밑줄에, 텍스트 색상이 빨간색으로 변경된다.<br>
         </p>
+        링크 상태 ex)
+        <pre>
+head 태그 내부 : 
+
+&lt;style&gt;
+    a:link    { color: teal; }
+    a:visited { color: maroon; text-decoration: none }
+    a:hover   { color: yellow; text-decoration: none }
+    a:active  { color: red; text-decoration: none }
+&lt;/style&gt;
+
+body 태그 내부 : 
+
+&lt;h2&gt;&lt;a href="index.html" style=""&gt;링크의 상태에 따라 스타일을 다르게 설정한다!&lt;/a&gt;&lt;/h2&gt;
+        </pre>
+        <h2><a href="index.html">링크의 상태에 따라 스타일을 다르게 설정한다!</a></h2>
+        <h2 id="5">HTML 이미지</h2>
+        <hr>
+        HTML문서에서는 이미지를 삽입할 때 &lt;img&gt; 태그를 사용한다.
+        <ul>
+            <li>src 속성 : 이미지의 주소를 명시한다.</li>
+            <li>alt 속성 : 이미지를 로딩할 수 없을 때 이미지 대신에 나타날 문자열을 명시한다.</li>
+        </ul>
+        이미지 ex)
+        <pre>
+head 태그 내부 :
+
+&lt;style&gt;
+    img {
+        width:100%;                 :너비가 화면 꽉 채우는 것을 의미함
+        border: 1px solid black;    :이미지의 테두리가 1px, 선형, 검은색이라는 것을 의미함
+    }
+&lt;/style&gt;
+
+body 태그 내부 :
+
+&lt;img src="example.jpeg" alt="html size" width="320" height="214"&gt;             :HTML의 width, height 속성으로 픽셀(px)단위로 명시함
+
+&lt;img src="example.jpeg" alt="style size" style="width:320px; height:214px"&gt;   :CSS의 스타일로 명시한다.
+        </pre>
+        <img src="example.jpeg" alt="html size" width="320" height="214">
+        <img src="example.jpeg" alt="style size" style="width:320px; height:214px">
+
+        그리고 img태그를 a태그 내부에 넣어 이미지를 클릭했을때 미리 지정한 페이지로 이동하게끔 만들 수도 있다.
+        <a href="https://www.google.com" target="_self"><img src="google.jpeg" alt="google" style="width:634px;width:479px"></a>
+
+        <h3>이미지 맵</h3>
+
+        이미지 맵 ex)
+        <pre>
+&lt;img src="/examples/images/img_imagemap.jpg" alt="진실혹은거짓" usemap="#vending" style="width:320px; height:240px" /&gt;
+
+: usemap태그를 사용하여 map태그의 name속성을 연결하면 이미지와 맵 사이의 관계가 설정된다.
+
+&lt;map name="vending"&gt;
+
+: map태그는 하나 이상의 area태그를 가지며 이 area태그가 버튼과 같은 역할을 한다.
+
+    &lt;area shape="rect" coords="90,60,180,130" alt="거짓"
+        href="https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93%EB%A7%90"&gt;
+: shape속성으로 "rect", 즉 직사각형이라는 것을 의미하고, coords속성은 (90,60)좌표가 직사각형의 왼쪽 위의 위치를 나타내고, (180,130)이 직사각형의 오른쪽 아래의 위치를 나타낸다.
+: 참고로 html에서의 좌표는 제일 왼쪽 위가 (0,0)이다.
+    &lt;area shape="rect" coords="210,200,70,130" alt="진실"     
+        href="https://ko.wikipedia.org/wiki/%EC%A7%84%EC%8B%A4"&gt;
+&lt;/map&gt;
+        </pre>
+        <img src="TruthOrFalse.jpg" alt="진실혹은거짓" usemap="#vending" style="width:320px; height:240px" />
+        <map name="vending">
+            <area shape="rect" coords="90,60,180,130" alt="거짓"
+                href="https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93%EB%A7%90">
+            <area shape="rect" coords="210,200,70,130" alt="진실"
+                href="https://ko.wikipedia.org/wiki/%EC%A7%84%EC%8B%A4">
+        </map>
         </p>
     </body>
 </html>
