@@ -34,6 +34,7 @@
                 <li><a href="#3">문자셋</a></li>
                 <li><a href="#4">링크</a></li>
                 <li><a href="#5">이미지</a></li>
+                <li><a href="#6">리스트</a></li>
             </ol>
             목차에서 원하는 곳으로 이동하기 위해서 href="#~~"를 사용하고 밑의 이동하기 원하는 태그에 id="~~"이라는 속성을 추가하여 이동하였다.
         </p>
@@ -222,6 +223,65 @@ body 태그 내부 :
             <area shape="rect" coords="210,200,70,130" alt="진실"
                 href="https://ko.wikipedia.org/wiki/%EC%A7%84%EC%8B%A4">
         </map>
+        <h2 id="6">HTML 리스트</h2>
+        <hr>
+        <p>
+            리스트(List)란 여러 요소들을 일렬로 나열한 목록이나 명단을 의미한다.<br>
+            HTML에서는 이러한 리스트들을 표현하기 위해 다음과 같은 리스트를 제공한다.<br>
+            <ol>
+                <li>순서가 없는 리스트(Unordered List)</li>
+                <li>순서가 있는 리스트(Ordered List)</li>
+                <li>정의 리스트(Definition List)</li>
+            </ol>
+            <h3>순서가 있는 리스트</h3>
+            <p>
+                순서가 있는 리스트는 &lt;ul&gt;태그들로 시작하며 여기에 포함되는 각각의 리스트 요소는 &lt;li&gt;태그로 시작한다. <br>
+                이 리스트는 각각의 리스트 요소 앞에 기본 마커(Marker)로 검정색의 작은 원(Bullet)이 위치한다. <br>
+                ex) <br>
+                <ul>
+                    <li>하나</li>
+                    <li>둘</li>
+                </ul>
+                CSS의 list-style-type 속성을 사용하면 마커를 다른 모양으로 변경할 수 있다.<br>
+                list-style-type:circle ex) <br>
+                <ul style="list-style-type:circle">
+                    <li>하나</li>
+                    <li>둘</li>
+                </ul>
+            </p>
+            <h3>순서가 있는 리스트</h3>
+            <p>
+                순서가 있는 리스트는 &lt;ol&gt;태그로 시작하며, 여기에 포함되는 각각의 리스트 요소는 &lt;li&gt;로 시작한다.<br>
+                각각의 리스트 요소 앞에 아라비아 숫자가 위치한다.<br>
+                ex) <br>
+                <ol>
+                    <li>하나</li>
+                    <li>둘</li>
+                </ol>
+                list-style-type:upper-alpha ex)<br>
+                <ol style="list-style-type:upper-alpha">
+                    <li>하나</li>
+                    <li>둘</li>
+                </ol>
+                list-style-type:upper-roman ex)<br>
+                <ol style="list-style-type:upper-roman">
+                    <li>하나</li>
+                    <li>둘</li>
+                </ol>
+            </p>
+            <h3>정의 리스트</h3>
+            <p>
+                정의 리스트는 용어와 그에 대한 정의를 모아놓은 리스트로 &lt;dl&gt;태그로 시작한다.<br>
+                &lt;dt&gt;태그에는 용어의 이름이 들어가고, &lt;dd&gt;태그에는 해당 용어에 대한 정의가 들어간다.<br>
+                ex)<br>
+                <dl>
+                    <dt>호박</dt>
+                    <dd>-박과의 한해살이 덩굴성 채소</dd>
+                    <dt>상추</dt>
+                    <dd>-국화과의 한해살이 또는 두해살이풀</dd>
+                </dl>
+            </p>
+        </p>
         </p>
     </body>
 </html>
